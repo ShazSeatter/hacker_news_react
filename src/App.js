@@ -11,8 +11,8 @@ function App() {
   const getStories = async () => {
     const response = await fetch("https://hacker-news.firebaseio.com/v0/topstories.json")
     const data = await response.json()
-    const newData = data.splice(0, 10) 
-    
+    const newData = data.splice(0, 10)
+
     const promises = newData.map(async story => {
       const secondResponse = await fetch(`https://hacker-news.firebaseio.com/v0/item/${story}.json`)
       const singleStory = await secondResponse.json();
@@ -20,7 +20,6 @@ function App() {
     })
     const results = await Promise.all(promises)
     setStories(results)
-  
   }
 
   useEffect(() => {
