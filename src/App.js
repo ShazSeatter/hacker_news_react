@@ -18,6 +18,8 @@ function App() {
       const singleStory = await secondResponse.json();
       return singleStory;
     })
+
+    // gives an array of promises once they are all done and THEN you can do something with that DATA
     const results = await Promise.all(promises)
     setStories(results)
   }

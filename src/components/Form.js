@@ -24,7 +24,7 @@ const Form = ({stories}) => {
         {query !== '' ? (
         filteredData.length > 0 ? (
           filteredData.map((article) => (
-            <div key={article.id}><a href={article.url}>{article.title}</a> by {article.by}</div>
+            <div key={article.id}><a href={article.url}>{article.title}</a> posted by {article.by}</div>
           ))
         ) : (
           <div>No results found</div>
@@ -38,9 +38,3 @@ const Form = ({stories}) => {
 
 
 export default Form;
-
-//         // {filteredData.map((article) => (
-        //     <div key={article.id}>
-        //         <a href={article.url}>{article.title}</a>
-        //     </div>
-        // ))}
